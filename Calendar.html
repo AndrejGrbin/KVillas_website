@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>calendar</title>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/js-year-calendar@latest/dist/js-year-calendar.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  
+  <style>
+    .calendar .calendar-header {
+  background-color: white;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  border: 0;
+  color: #8C7251;
+  font-family: 'Playfair Display';
+}
+
+.calendar .calendar-header .year-title:hover, .calendar .calendar-header .prev:hover, .calendar .calendar-header .next:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.calendar .calendar-header .year-neighbor {
+  color: inherit;
+  opacity: 0.7;
+}
+
+.calendar .calendar-header .year-neighbor2 {
+  color: inherit;
+  opacity: 0.4;
+}
+
+.calendar .month-container {
+  height: 210px;
+}
+
+.calendar table.month {
+  height: 100%;
+}
+
+.calendar table.month .month-title {
+  /*background-color: #F2F2F2;*/
+  color: #212426;
+  padding: 5px;
+  font-family: 'Playfair Display';
+}
+
+.calendar table.month .day-header {
+  padding-top: 2px;
+  border-bottom: 1px solid #212426;
+  font-family: 'Playfair Display';
+}
+
+.calendar table.month td.day .day-content {
+  padding: 1px 6px;
+  /*font-family: 'Dosis';*/
+}
+
+body {
+}
+
+
+
+  </style>
+
+</head>
+<body>
+<h1>Test Page</h1>
+    <div id="calendar"></div>
+    <script src="https://unpkg.com/js-year-calendar@latest/dist/js-year-calendar.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@4"></script>
+    <script>
+      const calendar = new Calendar('#calendar', {
+        
+        disabledWeekDays: [0,1,2,3],
+        disabledDays: [
+          new Date(2021,11,11)
+
+          ],
+        minDate: new Date(2021,0,30),
+        maxDate: new Date(2022,11,31),
+        displayDisabledDataSource: true,
+        allowOverlap: true,
+       
+        dataSource: function() {
+          return fetch(`https://www.googleapis.com/calendar/v3/calendars/andrej.grbin@gmail.com/events?key=AIzaSyBX3r0Zskn6r1oODwDGiUm1MvoCO3sKkGo`)
+            .then(result => result.json())
+            .then(result => {
+              if (result.items) {
+                console.log(result.items);
+                return result.items.map(r => ({
+                  startDate: new Date(r.start.dateTime),
+                  endDate: new Date(r.end.dateTime),
+                  color: '#8C7251',
+                  startHalfDay: true,
+                  endHalfDay: true,             
+                }));
+              }
+              return [];
+            });
+        },
+      });
+      calendar.setStyle('background');
+      calendar.alwaysHalfDay(true);
+    </script>
+    <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@4"></script>
+</body>
+</html>
