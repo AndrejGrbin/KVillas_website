@@ -9,24 +9,26 @@
   <style>
     .calendar .calendar-header {
   background-color: white;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
   border: 0;
-  color: #8C7251;
+  color: #000000;
   font-family: 'Playfair Display';
-}
+  width: 300px;
 
+}
+	  	  
 .calendar .calendar-header .year-title:hover, .calendar .calendar-header .prev:hover, .calendar .calendar-header .next:hover {
   background: rgba(255, 255, 255, 0.2);
 }
-
+	  
+	  
 .calendar .calendar-header .year-neighbor {
-  color: inherit;
+  color: #FFFFFF;
   opacity: 0.7;
 }
 
 .calendar .calendar-header .year-neighbor2 {
-  color: inherit;
-  opacity: 0.4;
+  color: #FFFFFF;
+  opacity: 0,2;
 }
 
 .calendar .month-container {
@@ -72,12 +74,71 @@ body {
     <script>
       const calendar = new Calendar('#calendar', {
         
-        disabledWeekDays: [0,1,2,3],
+        
+		weekStart: 1,
+		/*disabledWeekDays: [0,1,2,3,4,5],*/
         disabledDays: [
-          new Date(2021,11,11)
+			/* 2021 godina */
+			
+			new Date(2021,5,1),
+			new Date(2021,5,2),
+			new Date(2021,5,3),
+			new Date(2021,5,4),
+			new Date(2021,5,6),
+			new Date(2021,5,7),
+			new Date(2021,5,8),
+			new Date(2021,5,9),
+			new Date(2021,5,10),
+			new Date(2021,5,11),
+			new Date(2021,5,13),
+			new Date(2021,5,14),
+			new Date(2021,5,15),
+			new Date(2021,5,16),
+			new Date(2021,5,17),
+			new Date(2021,5,18),
+			new Date(2021,5,20),
+			new Date(2021,5,21),
+			new Date(2021,5,22),
+			new Date(2021,5,23),
+			new Date(2021,5,24),
+			new Date(2021,5,25),
+			new Date(2021,5,27),
+			new Date(2021,5,28),
+			new Date(2021,5,29),
+			new Date(2021,5,30),
 
-          ],
-        minDate: new Date(2021,0,30),
+			/* 2022 godina */
+			new Date(2022,5,1),
+			new Date(2022,5,2),
+			new Date(2022,5,3),
+			new Date(2022,5,4),
+			new Date(2022,5,6),
+			new Date(2022,5,7),
+			new Date(2022,5,8),
+			new Date(2022,5,9),
+			new Date(2022,5,10),
+			new Date(2022,5,11),
+			new Date(2022,5,13),
+			new Date(2022,5,14),
+			new Date(2022,5,15),
+			new Date(2022,5,16),
+			new Date(2022,5,17),
+			new Date(2022,5,18),
+			new Date(2022,5,20),
+			new Date(2022,5,21),
+			new Date(2022,5,22),
+			new Date(2022,5,23),
+			new Date(2022,5,24),
+			new Date(2022,5,25),
+			new Date(2022,5,27),
+			new Date(2022,5,28),
+			new Date(2022,5,29),
+			new Date(2022,5,30),
+
+			
+		],
+		
+		minDate: new Date(2021,0),
         maxDate: new Date(2022,11,31),
         displayDisabledDataSource: true,
         allowOverlap: true,
