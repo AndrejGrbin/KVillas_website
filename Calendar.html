@@ -5,14 +5,33 @@
   <title>calendar</title>
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/js-year-calendar@latest/dist/js-year-calendar.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-  
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Montserrat">
+
+    
   <style>
-    .calendar .calendar-header {
+	  
+  .culatini {
+	  
+  font-family: 'montserrat';
+  font-size: 20px;
+  text-align: center;
+	  
+}
+    
+  .calendar .calendar-header {
   background-color: white;
   border: 0;
   color: #000000;
-  font-family: 'Playfair Display';
-  width: 300px;
+  font-family: 'Montserrat';
+  width: 450px;
+  display: flex;
+  margin: auto;
+		border-style: solid;
+		border-color: black;
+		border-width: 1px;
+		border-radius: 30px;
+    
 
 }
 	  	  
@@ -43,18 +62,21 @@
   /*background-color: #F2F2F2;*/
   color: #212426;
   padding: 5px;
-  font-family: 'Playfair Display';
+  font-family: 'Montserrat';
 }
 
 .calendar table.month .day-header {
   padding-top: 2px;
-  border-bottom: 1px solid #212426;
-  font-family: 'Playfair Display';
+  border-bottom: 1px solid #000000;
+  font-family: 'Montserrat';
 }
 
 .calendar table.month td.day .day-content {
   padding: 1px 6px;
-  /*font-family: 'Dosis';*/
+  font-family: 'Montserrat';
+  /*border: solid;
+  border-width: 1px;
+  border-style: dotted;*/
 }
 
 body {
@@ -66,7 +88,7 @@ body {
 
 </head>
 <body>
-<h1>Test Page</h1>
+<h1 class="culatini"><font Monserrat>This page is used to test our calendar - let's do it!</h1>
     <div id="calendar"></div>
     <script src="https://unpkg.com/js-year-calendar@latest/dist/js-year-calendar.min.js"></script>
     <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
