@@ -6,11 +6,20 @@ def home(request):
 def de_home(request):
 	return render(request, "de_home.html", {} )
 
-def villa_adora(request):
-	return render(request, "villa_adora.html", {} )
+def adora(request):
+	return render(request, "adora.html", {} )
 
-def villa_amia(request):
-	return render(request, "villa_amia.html", {} )
+def amia(request):
+	return render(request, "amia.html", {} )
 
-def villa_shimunelka(request):
-	return render(request, "villa_shimunelka.html", {} )
+def shimunelka(request):
+	return render(request, "shimunelka.html", {} )
+
+def de_adora(request):
+	return render(request, "de_adora.html", {} )
+
+def de_amia(request):
+	return render(request, "de_amia.html", {} )
+
+def de_shimunelka(request):
+	return render(request, "de_shimunelka.html", {} )
