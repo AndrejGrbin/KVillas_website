@@ -128,3 +128,25 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+'''
+# Email setup
+# https://myaccount.google.com/lesssecureapps
+
+EMAIL_HOST = 'smtp.google.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'andrej.grbin@gmail.com'
+EMAIL_HOST_PASSWORD = 'password' # pogledati i dodati environmental variable
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+'''
+
+#python -m smtpd -n -c DebuggingServer localhost:1025
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = '' # pogledati i dodati environmental variable
+EMAIL_USE_TLS = False
+
+
+

@@ -1,0 +1,28 @@
+{% block form %}
+<h2>Hello {{ message_name }}</h2>
+
+<form class="row gy-2 gx-3 align-items-center" action="{% url 'home' %}" method="post">{% csrf_token %}
+  <div class="col-auto">
+    <label class="visually-hidden" for="autoSizingInput">Name</label>
+    <input type="text" name="message_name" class="form-control" id="autoSizingInput" placeholder="Jane Doe">
+  </div>
+  <div class="col-auto">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email" name="message_email" class="form-control" id="inputEmail4">
+  </div>
+  <div class="col-auto">
+    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+    <select name="message_villa" class="form-select" id="autoSizingSelect">
+      <option selected>Choose...</option>
+      <option value="1">Villa Adora</option>
+      <option value="2">Villa Amia</option>
+      <option value="3">Villa Shimunelka</option>
+    </select>
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+{% endblock %}
+
+<!-- csrf token -->
