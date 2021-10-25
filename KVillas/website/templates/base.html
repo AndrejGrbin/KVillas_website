@@ -13,7 +13,7 @@
   <body>
 
     <h1>Homepage Engleski</h1>
-
+    {% block message %}{% endblock %}
     {% block language_buttons %}
 	<div class="btn-group d-grid col-6 mx-auto" role="group" aria-label="Basic mixed styles example">
 	  <a class="btn btn-danger" href="{% url 'home' %}">Engleski</a>

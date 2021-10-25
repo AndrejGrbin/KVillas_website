@@ -29,8 +29,14 @@
 
 
     <h1>Homepage Engleski</h1>
-
-
+{% block message %}
+  {% if message_name %}
+    <center>
+      <h1>Thank you {{ message_name }}!</h1>
+      <h5>We will contact you shortly.</h5>
+    </center>
+  {% endif %}
+{% endblock %}
 
 
 
